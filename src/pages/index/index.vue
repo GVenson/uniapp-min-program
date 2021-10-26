@@ -10,6 +10,7 @@
 <script>
 	import { mapMutations, mapState } from 'vuex';
 	import { USER_INFO } from '@/store/mutation_type';
+	import { getUserInfo } from '@/api/home'
 	export default {
 		data() {
 			return {
@@ -26,11 +27,15 @@
 				accessToken: '',
 				isLogin: '',
 			});
+			this.getUserInfo();
 		},
 		methods: {
 			...mapMutations([
                 'USER_INFO',
             ]),
+			async getUserInfo() {
+				console.log('getUserInfo');
+			}
 		}
 	}
 </script>
